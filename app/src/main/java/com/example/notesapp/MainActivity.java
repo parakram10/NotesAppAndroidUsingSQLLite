@@ -42,9 +42,6 @@ public class MainActivity extends AppCompatActivity {
         title = findViewById(R.id.noteTitle);
         desc = findViewById(R.id.noteDesc);
         dataBaseHelper = new DataBaseHelper(MainActivity.this);
-        nodeList = dataBaseHelper.getAllNotes();
-        String s = String.valueOf(nodeList.size());
-        Toast.makeText(MainActivity.this,s,Toast.LENGTH_LONG).show();
         displayList();
 
         arrayAdapter = new MyListViewAdapter(MainActivity.this,dataBaseHelper.getAllNotes());
@@ -96,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
                     title.setText(" ");
                     desc.setText(" ");
                 }
+                displayList();
             }
         });
     }
