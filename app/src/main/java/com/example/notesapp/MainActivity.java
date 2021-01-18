@@ -1,26 +1,36 @@
 package com.example.notesapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.MenuItemCompat;
 
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.Toast;
 import android.widget.VideoView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     LinearLayout linear1, linear2, linear3;
     Button addNotes, submit;
+    ImageButton searchButton;
     ListView listView;
-    EditText title, desc;
+    EditText title, desc, search;
     MyListViewAdapter arrayAdapter;
     DataBaseHelper dataBaseHelper;
     List<NotesModel> nodeList;
@@ -44,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         dataBaseHelper = new DataBaseHelper(MainActivity.this);
         displayList();
 
-        arrayAdapter = new MyListViewAdapter(MainActivity.this,dataBaseHelper.getAllNotes());
+        arrayAdapter = new MyListViewAdapter(MainActivity.this, dataBaseHelper.getAllNotes());
         listView.setAdapter(arrayAdapter);
 
         addNotes.setOnClickListener(new View.OnClickListener() {
@@ -62,13 +72,11 @@ public class MainActivity extends AppCompatActivity {
                 String t = title.getText().toString();
                 String d = desc.getText().toString();
 
-                if(TextUtils.isEmpty(t)) {
-                    Toast.makeText(MainActivity.this, "Title must be given to the note.",Toast.LENGTH_SHORT).show();
-                }
-                else if(TextUtils.isEmpty(d)){
-                    Toast.makeText(MainActivity.this, "Description must be given to the note.",Toast.LENGTH_SHORT).show();
-                }
-                else {
+                if (TextUtils.isEmpty(t)) {
+                    Toast.makeText(MainActivity.this, "Title must be given to the note.", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty(d)) {
+                    Toast.makeText(MainActivity.this, "Description must be given to the note.", Toast.LENGTH_SHORT).show();
+                } else {
 
                     linear2.setVisibility(View.GONE);
                     linear1.setVisibility(View.VISIBLE);
@@ -96,6 +104,8 @@ public class MainActivity extends AppCompatActivity {
                 displayList();
             }
         });
+
+
     }
 
     private void displayList() {
@@ -107,4 +117,5 @@ public class MainActivity extends AppCompatActivity {
             listView.setVisibility(View.GONE);
         }
     }
+
 }

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@android:color/white"
+    android:background="@android:color/transparent"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         app:cardCornerRadius="10dp"
         app:cardElevation="30dp"
+        app:cardBackgroundColor="#023C4E"
         android:layout_margin="10dp">
 
         <LinearLayout
@@ -31,7 +32,7 @@
                     android:textStyle="bold"
                     android:text="Title"
                     android:padding="4dp"
-                    android:textColor="@android:color/black"
+                    android:textColor="@android:color/white"
                     android:textSize="20dp"
                     android:layout_marginLeft="2dp"
                     android:id="@+id/titleText"/>
@@ -43,6 +44,7 @@
                     android:layout_marginLeft="15dp"
                     android:textSize="17dp"
                     android:padding="10dp"
+                    android:textColor="@android:color/white"
                     android:id="@+id/descText"/>
 
             </LinearLayout>

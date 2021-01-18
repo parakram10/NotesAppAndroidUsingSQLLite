@@ -6,7 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@mipmap/jeremy"
+    android:scaleType="centerCrop">
     
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,14 +26,39 @@
             android:gravity="center"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="10dp"
-            android:textSize="25dp"
+            android:textSize="35dp"
             android:padding="5dp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:fontFamily="casual"/>
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:gravity="center">-->
+
+<!--            <EditText-->
+<!--                android:layout_width="300dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:hint="Enter Title...."-->
+<!--                android:textColor="@android:color/white"-->
+<!--                android:textColorHint="@android:color/white"-->
+<!--                android:textSize="15dp"-->
+<!--                android:id="@+id/search"-->
+<!--                android:backgroundTint="@android:color/white"/>-->
+<!--            <ImageButton-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:src="@drawable/ic_baseline_search_24"-->
+<!--                android:background="@android:color/transparent"-->
+<!--                android:id="@+id/searchButton"/>-->
+
+<!--        </LinearLayout>-->
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@android:color/black"/>
+            android:background="@android:color/darker_gray"/>
 
         <ListView
             android:layout_width="match_parent"
@@ -60,14 +87,15 @@
                 android:text="Empty Notes List"
                 android:gravity="center"
                 android:textSize="30dp"
-                android:textColor="#DFD9D9"/>
+                android:textColor="#DFD9D9"
+                android:fontFamily="monospace"/>
 
         </LinearLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@android:color/black"/>
+            android:background="@android:color/darker_gray"/>
 
         <Button
             android:layout_width="match_parent"
@@ -81,12 +109,12 @@
             android:layout_marginRight="20dp"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
-            android:background="@android:color/holo_blue_dark"
+            android:background="#023A4C"
             android:textColor="@android:color/white"
             android:textStyle="bold"/>
         
     </LinearLayout>
-    
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -117,6 +145,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/noteTitle"
             android:hint="Title"
+            android:backgroundTint="@android:color/darker_gray"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="0dp"/>
@@ -128,12 +157,13 @@
             android:textSize="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"/>
-        
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/noteDesc"
             android:hint="Description"
+            android:backgroundTint="@android:color/darker_gray"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="0dp"/>
@@ -148,7 +178,7 @@
             android:textColor="@android:color/black"
             android:textStyle="bold"
             android:textSize="20dp"
-            android:background="@android:color/holo_blue_dark"
+            android:background="#012733"
             android:fontFamily="monospace"
             android:padding="10dp"
             android:id="@+id/submit"/>

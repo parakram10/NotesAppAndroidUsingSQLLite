@@ -88,4 +88,24 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         if(cursor.moveToFirst()) return true;
         else return false;
     }
+
+//    public List<NotesModel> search(String keyword) {
+//        List<NotesModel> notesModels = null;
+//        try {
+//            SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+//            Cursor cursor = sqLiteDatabase.rawQuery("select * from " + NOTES_TABLE + " where " + COLUMN_NOTE_TITLE + " like ?", new String[] { "%" + keyword + "%" });
+//            if (cursor.moveToFirst()) {
+//                notesModels = new ArrayList<NotesModel>();
+//                do {
+//                    NotesModel notesModel = new NotesModel();
+//                    notesModel.setTitle(cursor.getString(1));
+//                    notesModel.setTitle(cursor.getString(2));
+//                    notesModels.add(notesModel);
+//                } while (cursor.moveToNext());
+//            }
+//        } catch (Exception e) {
+//            notesModels = null;
+//        }
+//        return notesModels;
+//    }
 }
